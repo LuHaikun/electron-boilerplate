@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  /* background: #022d55; */
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img {
+  background: url('../../assets/images/updateBrowser/updateBrowser-img.png') center center no-repeat;
+  display: block;
+  width: 190px;
+  height: 230px;
+  margin: 0 auto 24px auto;
+}
+
+.content-text {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  margin: 0 0 14px 0;
+}
+
+.content-text:last-child {
+  margin-bottom: 0;
+}
+
+.content-ul {
+  text-align: center;
+  margin: 24px 0 0 0;
+}
+
+.content-li {
+  list-style: none;
+  float: left;
+  margin: 0 24px 0 0;
+}
+
+.content-li:last-child {
+  margin-right: 0;
+}
+
+.content-li-a {
+  text-decoration: none;
+}
+
+.content-li-logo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 8px auto;
+  background-color: #fff;
+}
+
+.content-li-logo__chrome {
+  background: url('../../assets/images/updateBrowser/chrome.png') center center no-repeat;
+}
+
+.content-li-logo__360 {
+  background: url('../../assets/images/updateBrowser/360.png') center center no-repeat;
+}
+
+.content-li-logo__sougou {
+  background: url('../../assets/images/updateBrowser/sougou.png') center center no-repeat;
+}
+
+.content-li-logo__qq {
+  background: url('../../assets/images/updateBrowser/qq.png') center center no-repeat;
+}
+
+.content-li-logo__maxthon {
+  background: url('../../assets/images/updateBrowser/maxthon.png') center center no-repeat;
+}
+
+.content-li-logo-name {
+  font-size: 14px;
+  color: #000;
+}

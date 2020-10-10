@@ -1,0 +1,69 @@
+.arrow-wrapper {
+  display: flex;
+  flex-direction: column;
+  .row-item {
+    margin-right: -10px;
+    margin-left: -10px;
+    .flow-item {
+      float: left;
+      width: 16.66667%;
+      max-width: 180px;
+      text-align: center;
+      margin-bottom: 9px;
+      padding-right: 15px;
+    }
+    .flow-item:not(:first-child) > div:before, .flow-item > div:after {
+      content: ' ';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 0 15px 10px;
+      border-color: transparent transparent transparent #E8EBEF;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .flow-item > div {
+      position: relative;
+      padding: 5px 0 5px 8px;
+      line-height: 20px;
+      background: #E8EBEF;
+      white-space: nowrap;
+      overflow: visible;
+      color: #3c4353;
+    }
+    .flow-item-0 > div {
+      color: #838A9D;
+      font-weight: bold;
+      padding-left: 0;
+    }
+    .flow-item-1 > div {
+      background: #E3F2FD;
+    }
+    .flow-item-2 > div {
+      background: #E8F5E9;
+    }
+    .flow-item-3 > div {
+      background: #FFF3E0;
+    }
+    .flow-item-1 > div:after {
+      border-left-color: #E3F2FD;
+    }
+    .flow-item-2 > div:after {
+      border-left-color: #E8F5E9;
+    }
+    .flow-item-3 > div:after {
+      border-left-color: #FFF3E0;
+    }
+    .flow-item:not(:first-child) > div:before {
+      border-left-color: #fff;
+      z-index: 1;
+    }
+    .flow-item > div:after {
+      left: auto;
+      right: -10px;
+      z-index: 2;
+    }
+  }
+}

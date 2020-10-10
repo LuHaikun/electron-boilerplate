@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.four-leaf-wrapper {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .four-leaf-container {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    .four-leaf-one:hover,
+    .four-leaf-two:hover {
+      box-shadow: 0 0 10px rgba(120,98,98,0.5);
+      transform: translateY(-10px);
+      transition: all 0.5s;
+    }
+    .four-leaf-three:hover,
+    .four-leaf-four:hover {
+      box-shadow: 0 0 10px rgba(120,98,98,0.5);
+      transform: translateY(10px);
+      transition: all 0.5s;
+    }
+    .four-leaf-one,
+    .four-leaf-four {
+      border-top-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    .four-leaf-two,
+    .four-leaf-three {
+      border-top-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    .four-leaf-one {
+      top: 45px;
+      left: 45px;
+      background: rgba(238,10,10,0.6);
+    }
+    .four-leaf-one-active {
+      top: 0;
+      left: 0;
+      background: rgba(238,10,10,0.6);
+      text-shadow: -5px 5px 5px rgb(56,55,55);
+    }
+    .four-leaf-two {
+      top: 45px;
+      right: 45px;
+      background: rgba(252,235,3,0.86);
+    }
+    .four-leaf-two-active {
+      top: 0;
+      right: 0;
+      background: rgba(252,235,3,0.86);
+      text-shadow: 5px 5px 5px rgb(56,55,55);
+    }
+    .four-leaf-three {
+      left: 45px;
+      bottom: 45px;
+      background: rgba(149,247,3,0.86);
+    }
+    .four-leaf-three-active {
+      left: 0;
+      bottom: 0;
+      background: rgba(149,247,3,0.86);
+      text-shadow: -5px 5px 5px rgb(56,55,55);
+    }
+    .four-leaf-four {
+      right: 45px;
+      bottom: 45px;
+      background: rgba(5,190,247,0.86);
+    }
+    .four-leaf-four-active {
+      right: 0;
+      bottom: 0;
+      background: rgba(5,190,247,0.86);
+      text-shadow: 5px 5px 5px rgb(56,55,55);
+    }
+    .four-leaf-one-active,
+    .four-leaf-two-active,
+    .four-leaf-three-active,
+    .four-leaf-four-active {
+      border: 3px solid rgb(255,255,255);
+      color: white;
+      border-radius: 100%;
+    }
+  }
+  .four-leaf-container div {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    font-size: 30px;
+    color: rgb(255,255,255);
+    text-align: center;
+    line-height: 150px;
+  }
+}
+

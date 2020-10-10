@@ -1,0 +1,54 @@
+.tool-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 100%;
+  border-right: 6px solid #7a6e6e;
+  em {
+    font-style: normal;
+  }
+  .tool-bar-panel {
+    position: absolute;
+    top: 50%;
+    margin-top: -126px;
+    width: 35px;
+  }
+  .tool-bar-panel-item {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 1px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    text-align: center;
+    background-color: #7a6e6e;
+    .panel-item-icon {
+      font-size: 25px;
+      color: #fff;
+      line-height: 35px;
+    }
+  }
+  .tool-bar-panel-item em {
+    display: block;
+    position: absolute;
+    right: 32px;
+    width: 0;
+    height: 35px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 35px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #7a6e6e;
+    overflow: hidden;
+    transition: width 500ms linear;
+  }
+  .tool-bar-panel-item:hover {
+    background-color: #b61d1d;
+  }
+  .tool-bar-panel-item:hover em {
+    width: 62px;
+    background-color: #b61d1d;
+  }
+}
+

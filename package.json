@@ -1,0 +1,177 @@
+{
+  "name": "electron-boilerplate",
+  "version": "1.0.0",
+  "description": "A minimal Electron boilerplate",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./electron/node/startTask.js",
+    "dev:electron": "cross-env NODE_ENV=development electron ./main.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --config webpack.dev.js",
+    "build:test": "cross-env NODE_ENV=test webpack --mode production --config webpack.prod.js",
+    "build:development": "cross-env NODE_ENV=development webpack --mode production --config webpack.prod.js",
+    "build:intranet": "cross-env NODE_ENV=intranet webpack --mode production --config webpack.prod.js",
+    "build:production": "cross-env NODE_ENV=production webpack --mode production  --config webpack.prod.js",
+    "package-all": "npm run build:production && cross-env NODE_ENV=production electron-builder build -mwl --publish never",
+    "package-mac": "npm run build:production && cross-env NODE_ENV=production electron-builder build --mac",
+    "package-win": "npm run build:production && cross-env NODE_ENV=production electron-builder build --win --x64",
+    "package-linux": "npm run build:production && cross-env NODE_ENV=production electron-builder build --linux",
+    "package-publish": "npm run build:production && cross-env NODE_ENV=production electron-builder build --mac --win --publish always",
+    "standardfix": "standard --fix",
+    "deploy": "./deploy.sh"
+  },
+  "keywords": [
+    "electron",
+    "boilerplate"
+  ],
+  "author": "lhk",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@babel/core": "7.11.6",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-proposal-decorators": "7.10.5",
+    "@babel/plugin-proposal-export-default-from": "7.10.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "7.11.0",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/plugin-syntax-import-meta": "7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "7.10.4",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/plugin-transform-spread": "7.11.0",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-angular": "^8.2.0",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.1.0",
+    "babel-plugin-import": "1.13.0",
+    "chalk": "^4.1.0",
+    "clean-webpack-plugin": "3.0.0",
+    "commitlint": "9.0.1",
+    "core-js": "^3.6.5",
+    "cross-env": "7.0.2",
+    "cross-spawn": "7.0.3",
+    "css-loader": "3.6.0",
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.1",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-react": "^7.20.3",
+    "file-loader": "6.0.0",
+    "html-webpack-plugin": "4.3.0",
+    "husky": "4.2.5",
+    "less": "3.11.3",
+    "less-loader": "6.1.3",
+    "mini-css-extract-plugin": "^0.11.2",
+    "node-sass": "4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "pm2": "^4.4.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "sass-loader": "8.0.2",
+    "source-map-loader": "^1.0.0",
+    "standard": "^14.3.4",
+    "style-loader": "1.2.1",
+    "terser-webpack-plugin": "^2.3.5",
+    "ts-loader": "^8.0.0",
+    "typescript": "^3.6.3",
+    "url-loader": "^4.1.0",
+    "validate-commit-msg": "2.14.0",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
+    "webpack-merge": "4.2.2",
+    "workbox-webpack-plugin": "^5.1.3"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.2.1",
+    "@loadable/component": "^5.13.2",
+    "antd": "^4.4.2",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "css-vars": "^2.2.0",
+    "electron-log": "^4.2.4",
+    "electron-updater": "^4.3.5",
+    "events": "^3.1.0",
+    "fs-extra": "^9.0.1",
+    "fs-file-tree": "^1.1.1",
+    "history": "^4.10.1",
+    "is-electron": "^2.2.0",
+    "moment": "^2.24.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "shelljs": "^0.8.4"
+  },
+  "build": {
+    "asar": true,
+    "productName": "electron脚手架",
+    "appId": "com.electron.app",
+    "compression": "maximum",
+    "directories": {
+      "buildResources": "electron/resources",
+      "output": "release"
+    },
+    "files": [
+      "dist/",
+      "node/",
+      "node_modules/",
+      "dist/index.html",
+      "main.js",
+      "package.json",
+      "electron/",
+      "src/constant/"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "electron/resources/icons/icon.ico",
+      "uninstallerIcon": "electron/resources/icons/icon.ico",
+      "installerHeaderIcon": "electron/resources/icons/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "electron/resources/icons/icon.icns"
+    },
+    "win": {
+      "icon": "electron/resources/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "build/icons"
+    },
+    "publish": {
+      "provider": "generic",
+      "owner": "electron-boilerplate",
+      "repo": "electron-boilerplate",
+      "url": "http://localhost/release",
+      "private": false
+    }
+  }
+}
